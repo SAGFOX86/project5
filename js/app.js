@@ -266,14 +266,14 @@ var MapViewModel = function()
 function loadData(){
  var $nytHeaderElem = $('#nytimes-header');
     var $nytElem = $('#nytimes-articles');
-    var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?q=Concord%2CNC"&"api-key=a400bf2ed23d16e7545072692eb6ac92:15:72063925' ;
+    var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=Concord%2CNC&api-key=a400bf2ed23d16e7545072692eb6ac92%3A15%3A72063925' ;
 
     $.ajax({
     	url: nytimesUrl, 
     	dataType: "json",
     	success:function (data) {
 
-        $nytHeaderElem.text('New York Times Articles About ' + '')
+        $nytHeaderElem.text('New York Times Articles About ' + 'Concord,NC')
 
     articles = data.response.docs;
     for (var i = 0; i < articles.length; i++) {
