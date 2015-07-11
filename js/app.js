@@ -266,14 +266,14 @@ var MapViewModel = function()
 function loadData(){
  var $nytHeaderElem = $('#nytimes-header');
     var $nytElem = $('#nytimes-articles');
-    var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' + this.location
-     + '&sort=newest&api-key=3a9e4ea85426f18a911c5065883cce05:0:72063925' ;
+    var nytimesUrl = 'http://api.nytimes.com/svc/search/v2/articlesearch.jsonp?q=Concord%2CNC"&"api-key=a400bf2ed23d16e7545072692eb6ac92:15:72063925' ;
+
     $.ajax({
     	url: nytimesUrl, 
-    	dataType: "jsonp",
+    	dataType: "json",
     	success:function (data) {
 
-        $nytHeaderElem.text('New York Times Articles About ' + this.name);
+        $nytHeaderElem.text('New York Times Articles About ' + '')
 
     articles = data.response.docs;
     for (var i = 0; i < articles.length; i++) {
@@ -281,9 +281,9 @@ function loadData(){
         $nytElem.append('<li class="article">' +
             '<a href=" '+article.web_url+'">'+article.headline.main+
         '</a>'+
-        '<p>' + article.snippet + '</p>'+'</li>');
+        '<p>' + article.snippet + '</p>'+'</li>')
     
-											  };
+											  }
 								},
 error:function(e){
     $nytHeaderElem.text('New York Times Article Could Not Be Loaded!');
@@ -292,5 +292,5 @@ error:function(e){
 		  });
 }
 loadData();
-var myMapView = new MapViewModel();
+
 $(ko.applyBindings(new MapViewModel()));
