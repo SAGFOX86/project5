@@ -39,7 +39,7 @@ body,
 	margin-left: 8px;
 	padding: 5px 13px;
 	background: #333;
-	color: white;
+	color: blue;
 	font-size: 14px;
 	font-weight: bolder;
 }
@@ -83,7 +83,7 @@ body,
 
 .place-info.current {
 	background: #333;
-	color: white;
+	color: blue;
 }
 
 .place-info.hidden {
@@ -99,13 +99,13 @@ body,
 
 .place-address {
 	margin: 0;
-	font-size: 13px;
+	font-size: 10px;
 }
 
 .places-list-toggle {
 	padding: 5px 13px;
 	background: #333;
-	color: white;
+	color: red;
 	font-size: 14px;
 	font-weight: bold;
 	border: none;
@@ -117,8 +117,9 @@ body,
 }
 
 .window-name {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
+	color: orange;
 }
 
 @media screen and (max-width: 750px) {
@@ -148,12 +149,12 @@ body,
 	#places {
 		position: fixed;
 		top: auto;
-		bottom: 0px;
-		left: 0px;
+		bottom: 0;
+		left: 0;
 		width: 100%;
 		max-height: 60%;
 		margin: 0;
-		padding: 0px;
+		padding: 0;
 		border-top: 3px solid #333;
 		
 		-webkit-transition: max-height 0.5s;
